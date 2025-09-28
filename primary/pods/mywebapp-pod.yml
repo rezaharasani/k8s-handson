@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: mypod
+  labels:
+    app: mywebapp
+    type: frontend
+spec:
+  containers:
+    - name: mywebapp
+      image: devopsjourney1/mywebapp
+      ports:
+        - containerPort: 80
