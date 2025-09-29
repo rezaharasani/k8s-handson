@@ -1,0 +1,57 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywebapp-service
+  labels:
+    app: mywebapp
+    type: frontend
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+      name: flask
+  selector:
+    app: mywebapp
+    type: frontend
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mywebapp-configmapv1.0
+data:
+  BG_COLOR: '#12181b'
+  FONT_COLOR: '#FFFFFF'
+  CUSTOM_HEADER: 'Customized with a configmap!'
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mywebapp-deploy
+  labels:
+    app: mywebapp
+    type: frontend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: mywebapp
+      type: frontend
+  template:
+    metadata:
+      name: mywebapp-pod
+      labels:
+        app: mywebapp
+        type: frontend
+    spec:
+      containers:
+        - name: mycontainer
+          image: devopsjourney1/mywebapp
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: 'mywebapp-configmapv1.0'

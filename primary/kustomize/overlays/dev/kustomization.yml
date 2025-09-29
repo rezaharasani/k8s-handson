@@ -1,0 +1,13 @@
+bases:
+  - ../../base
+
+namespace: dev
+
+patchesStrategicMerge:
+  - replicas.yml
+
+configMapGenerator:
+  - name: webapp-configmap
+    env: config.properties
+
+nameSuffix: -dev
