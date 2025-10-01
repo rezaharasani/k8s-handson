@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  labels:
+    app: webapp
+    type: frontend
+  namespace: default
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 9000
+      targetPort: 80
+      protocol: TCP
+      name: flask
+  selector:
+    app: webapp
+    type: frontend

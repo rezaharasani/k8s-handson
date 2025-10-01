@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deploy
+  labels:
+    app: webapp
+    type: frontend
+  namespace: default
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webapp
+      type: frontend
+  template:
+    metadata:
+      name: webapp-pod
+      labels:
+        app: webapp
+        type: frontend
+      namespace: default
+    spec:
+      containers:
+        - name: mycontainer
+          image: devopsjourney1/mywebapp
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: webappconfigmapv1.0
+          resources:
+            requests:
+              memory: '16Mi'
+              cpu: '50m'
+            limits:
+              memory: '128Mi'
+              cpu: '100m'
