@@ -1,0 +1,13 @@
+resources:
+  - ../../base
+
+namespace: test
+
+patches:
+  - path: replicas.yml
+
+configMapGenerator:
+  - name: webapp-configmap
+    env: config.properties
+
+nameSuffix: -test

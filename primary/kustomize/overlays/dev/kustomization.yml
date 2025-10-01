@@ -1,10 +1,10 @@
-bases:
+resources:
   - ../../base
 
 namespace: dev
 
-patchesStrategicMerge:
-  - replicas.yml
+patches:
+  - path: replicas.yml
 
 configMapGenerator:
   - name: webapp-configmap
