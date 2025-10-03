@@ -1,0 +1,11 @@
+namespace: dev
+
+configmap:
+  name: configmap-v1.1.0-dev
+  data:
+    BG_COLOR: '#91427c'
+    FONT_COLOR: '#FFFFFF'
+    CUSTOM_HEADER: Welcome to DevOps Journey - Development Environment
+
+svc:
+  port: 9001

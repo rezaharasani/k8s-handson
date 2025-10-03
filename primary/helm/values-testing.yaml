@@ -1,0 +1,11 @@
+namespace: testing
+
+configmap:
+  name: configmap-v1.1.0-testing
+  data:
+    BG_COLOR: '#0e7c87'
+    FONT_COLOR: '#FFFFFF'
+    CUSTOM_HEADER: Welcome to DevOps Journey - Testing Environment
+
+svc:
+  port: 9002
