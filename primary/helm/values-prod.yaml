@@ -5,4 +5,4 @@ configmap:
   data:
     BG_COLOR: '#FFFFFF'
     FONT_COLOR: '#000000'
-    CUSTOM_HEADER: Welcome to DevOps Journey - Production Environment
+    CUSTOM_HEADER: 'Welcome to DevOps Journey - Production Environment'

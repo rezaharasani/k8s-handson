@@ -5,7 +5,7 @@ configmap:
   data:
     BG_COLOR: '#91427c'
     FONT_COLOR: '#FFFFFF'
-    CUSTOM_HEADER: Welcome to DevOps Journey - Development Environment
+    CUSTOM_HEADER: 'Welcome to DevOps Journey - Development Environment'
 
 svc:
   port: 9001

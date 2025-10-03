@@ -19,9 +19,9 @@ files for each namespace. Moreover, to run our application for every environment
 
 ```
 > cd /path/to/project/helm/dir
-> helm install webpp-release-prod -n prod --values=values-prod.yaml .
-> helm install webpp-release-testing -n testing --values=values-testing.yaml .
-> helm install webpp-release-dev -n dev --values=values-dev.yaml .
+> helm install webpp-release-prod --namespace prod --values values-prod.yaml .
+> helm install webpp-release-testing --namespace testing --values values-testing.yaml .
+> helm install webpp-release-dev --namespace dev --values values-dev.yaml .
 ```
 
 Subsequently, at the end, we can connect to our application in diffrent 

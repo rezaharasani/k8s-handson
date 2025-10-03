@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Values.appName }}
     type: frontend
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Values.namespace }}
 spec:
   replicas: 5
   selector:
@@ -19,7 +19,7 @@ spec:
       labels:
         app: {{ .Values.appName }}
         type: frontend
-      namespace: {{ .Values.namespace | default "default" }}
+      namespace: {{ .Values.namespace }}
     spec:
       containers:
         - name: mycontainer

@@ -6,12 +6,12 @@ metadata:
   labels:
     app: {{ .Values.appName }}
     type: frontend
-  namespace: {{ .Values.namespace | default "default" }}
+  namespace: {{ .Values.namespace }}
 spec:
   type: {{ .Values.svc.type }}
   ports:
     - port: {{ .Values.svc.port }}
-      targetPort: 80
+      targetPort: {{ .Values.svc.targetPort }}
       protocol: TCP
       name: flask
   selector:

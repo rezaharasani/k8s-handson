@@ -9,10 +9,11 @@ image:
 configmap:
   name: configmap-v1.1.0-default
   data:
-    BG_COLOR: '#12181b'
-    FONT_COLOR: '#FFFFFF'
-    CUSTOM_HEADER: Welcome to DevOps Journey!
+    BG_COLOR: '#FFFFFF'
+    FONT_COLOR: '#000000'
+    CUSTOM_HEADER: 'Welcome to DevOps Journey!'
 
 svc:
   port: 9000
+  targetPort: 80
   type: LoadBalancer
