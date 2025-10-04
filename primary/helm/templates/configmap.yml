@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.configmap.name }}
+  name: "{{ .Values.configmap.name }}-{{ .Values.namespace }}"
   namespace: {{ .Values.namespace }}
 data:
   BG_COLOR: {{ .Values.configmap.data.BG_COLOR | quote }}

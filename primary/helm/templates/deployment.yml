@@ -2,13 +2,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.appName }}-deploy
+  name: {{ .Values.appName }}-{{ .Values.namespace }}-deploy
   labels:
     app: {{ .Values.appName }}
     type: frontend
   namespace: {{ .Values.namespace }}
 spec:
-  replicas: 5
+  replicas: {{ .Values.deploy.spec.replicas }}
   selector:
     matchLabels:
       app: {{ .Values.appName }}
@@ -28,7 +28,7 @@ spec:
             - containerPort: 80
           envFrom:
             - configMapRef:
-                name: {{ .Values.configmap.name }}
+                name: "{{ .Values.configmap.name }}-{{ .Values.namespace }}"
           resources:
             requests:
               memory: '16Mi'

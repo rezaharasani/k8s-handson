@@ -3,7 +3,7 @@ SERVICE_NAME=$(kubectl get svc --namespace {{ .Values.namespace }} -l "app={{ .V
 
 To access your application, run the following command:
 
-  kubectl port-forward {{ .Values.appName }}-service {{ .Values.svc.port }}:80 --namespace {{ .Values.namespace }}
+  kubectl port-forward {{ .Values.appName }}-{{ .Values.namespace }}-service {{ .Values.svc.port }}:80 --namespace {{ .Values.namespace }}
 
 Then open your browser to:
 
