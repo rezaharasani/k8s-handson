@@ -37,6 +37,14 @@ configmap/mongodb-configmap   1      25m
 
 ```
 
+### Architecture:
+
+<p align="center">
+  <img src="img/architecture.png" alt="Architecture" width="500">
+</p>
+
+
+### Run:
 In order to see mongodb express service, run the following commands:
 ```
 % minikube service mongo-express-service --namespace mongodb --url
@@ -44,6 +52,12 @@ In order to see mongodb express service, run the following commands:
 
 then, oprn the given url into a browser. After that, you see the Sing in page (default username: `admin` and password: `pass`)
 
-![SignIn](img/login-page.png)
 
-![MongodbFirstPage](img/mongodb-express-first-page.png)
+<p align="center">
+  <img src="img/login-page.png" alt="SignIn" width="500">
+</p>
+
+
+<p align="center">
+  <img src="img/mongodb-express-first-page.png" alt="MongodbFirstPage" width="500">
+</p>
